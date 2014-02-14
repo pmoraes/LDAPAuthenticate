@@ -53,8 +53,8 @@ class Ldap
 
 	public function reBind($user)
 	{
-		$model = $this->getModel();
-		$password = $this->getPassword();
+		$model = $this->model();
+		$password = $this->password();
 
 		$bind = @ldap_bind($this->ldapConnection, $user[$model]['dn'], $this->request->data[$model][$password]);
 
@@ -85,8 +85,8 @@ class Ldap
 	private function filter()
 	{
 		$ldapFilter = $this->settings['ldap_filter'];
-		$model = $this->getModel();
-		$fieldUserName = $this->getUserName();
+		$model = $this->model();
+		$fieldUserName = $this->username();
 
 		$ldapFilter = preg_replace('/%USERNAME%/', $this->request->data[$model][$fieldUserName], $ldapFilter);
 
@@ -119,8 +119,8 @@ class Ldap
 
 	public function getUser()
 	{
-		$model = $this->getModel();
-		$fieldUserName = $this->getUserName();
+		$model = $this->model();
+		$fieldUserName = $this->username();
 
 		if (!$this->search()) { 
 			return false;
@@ -151,27 +151,27 @@ class Ldap
 	{
 		$user = array_merge($this->getUser(), $this->settings['defaults']);
 
-		if (!ClassRegistry::init($this->getModel())->save($user)) {
+		if (!ClassRegistry::init($this->model())->save($user)) {
 			return false;
 		}
 
-		$id = ClassRegistry::init($this->getModel())->getLastInsertID();
-		$dbUser = ClassRegistry::init($this->getModel())->findById($id);
+		$id = ClassRegistry::init($this->model())->getLastInsertID();
+		$dbUser = ClassRegistry::init($this->model())->findById($id);
 
 		return $dbUser;
 	}
 	
-	private function getModel() 
+	private function model() 
 	{
 		return $this->settings['model'];
 	}
 
-	private function getUserName()
+	private function username()
 	{
 		return $this->settings['form_fields']['username'];		
 	}
 
-	private function getPassword()
+	private function password()
 	{
 		return $this->settings['form_fields']['password'];		
 	}
