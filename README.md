@@ -1,4 +1,4 @@
-LDAPAuthenticate
+# LDAPAuthenticate
 
 LDAPAuthenticate is a CakePHP 2.0 Plugin, that make your authenticate with ldap very simple!
 
