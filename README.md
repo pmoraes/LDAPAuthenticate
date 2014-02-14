@@ -2,16 +2,16 @@
 
 LDAPAuthenticate is a CakePHP 2.0 Plugin, that make your authenticate with ldap very simple!
 
-Requirements
+## Requirements
 
 PHP 5.3 or >
 CakePHP 2.0 or >
 
-Installation
+## Installation
 
 Clone from github : in your app directory type git clone git@github.com:pmoraes/LDAPAuthenticate.git
 
-Usage
+## Usage
 
 You need to configure the plugin in your appController below follow how to configure
 
