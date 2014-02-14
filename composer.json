@@ -1,0 +1,16 @@
+{
+    "name": "pmoraes/ldapauthenticate",
+    "description": "Authenticate with LDAP",
+    "type": "cakephp-plugin",
+    "homepage": "https://github.com/pmoraes/LDAPAuthenticate",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Peter Moraes",
+            "email": "peter.veiga.moraes@gmail.com"
+        }
+    ],
+    "require": {
+        "composer/installers": "1.0.*"
+    }
+}

@@ -9,7 +9,7 @@ CakePHP 2.0 or >
 
 ## Installation
 
-Clone from github : in your app directory type git clone git@github.com:pmoraes/LDAPAuthenticate.git
+Clone from github : in your app/Plugin directory type git clone git@github.com:pmoraes/LDAPAuthenticate.git
 
 ## Usage
 
