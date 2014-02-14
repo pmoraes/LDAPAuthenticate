@@ -15,7 +15,7 @@ Clone from github : in your app directory type git clone git@github.com:pmoraes/
 
 You need to configure the plugin in your appController below follow how to configure
 
-
+```php
 'Auth' => array(
       'authenticate' => array(
         'LDAPAuthenticate.LDAP' => array(
